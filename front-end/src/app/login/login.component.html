@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="auth-form" style="padding: 20px;">
+      <h1>Регистрация / Авторизация</h1>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+            <mat-form-field appearance="outline" class="w-100 input-container">
+                <input matInput
+                       ngModel
+                       name="userName"
+                       id="userName"
+                       placeholder="Имя пользователя">
+                <div class="input-icon">
+                    <img src="./assets/icons/username.png" alt="icon">
+                </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100 input-container">
+                <input type="password"
+                    matInput
+                       ngModel
+                       name="userPassword"
+                       id="userPassword"
+                       placeholder="Пароль">
+                <div class="input-icon">
+                  <img src="./assets/icons/password.png" alt="icon">
+                </div>
+            </mat-form-field>
+
+            <button class="w-100 login-btn" type="submit" mat-raised-button color="primary">Войти</button>
+            <button class="w-100" type="button" mat-raised-button (click)="registerUser()">Создать аккаунт</button>
+        </form>
+
+
+    </div>
+</div>

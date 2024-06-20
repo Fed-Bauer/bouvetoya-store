@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <table mat-table
+           [dataSource]="getMyOrderDetails"
+           class="mat-elevation-z8 custom-table">
+
+        <ng-container matColumnDef="Name">
+            <th mat-header-cell
+                *matHeaderCellDef> Имя </th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.orderFullName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Address">
+            <th mat-header-cell
+                *matHeaderCellDef> Адрес </th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.orderFullOrder}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Contact No.">
+            <th mat-header-cell
+                *matHeaderCellDef> Номер телефона </th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.orderContactNumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Amount">
+            <th mat-header-cell
+                *matHeaderCellDef> Сумма </th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.orderAmount}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Status">
+            <th mat-header-cell
+                *matHeaderCellDef> Статус </th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.orderStatus}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row
+            *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row
+            *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

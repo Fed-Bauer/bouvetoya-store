@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <mat-button-toggle-group  aria-label="Font Style">
+      <mat-button-toggle value="All" (click)="getAllOrderDetailsForAdmin('Все')">Все</mat-button-toggle>
+      <mat-button-toggle value="Placed" (click)="getAllOrderDetailsForAdmin('В процессе')">В процессе</mat-button-toggle>
+      <mat-button-toggle value="Delivered" (click)="getAllOrderDetailsForAdmin('Достовленные')" >Доставленные</mat-button-toggle>
+    </mat-button-toggle-group>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-3 custom-table">
+
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.orderId}} </td>
+      </ng-container>
+
+      <!-- Product Name Column -->
+      <ng-container matColumnDef="Product Name">
+        <th mat-header-cell *matHeaderCellDef> Название </th>
+        <td mat-cell *matCellDef="let element"> {{element.product.productName}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef> Имя </th>
+        <td mat-cell *matCellDef="let element"> {{element.user.userFirstName}} </td>
+      </ng-container>
+
+      <!-- Address Column -->
+      <ng-container matColumnDef="Address">
+        <th mat-header-cell *matHeaderCellDef> Адресс </th>
+        <td mat-cell *matCellDef="let element"> {{element.orderFullOrder}} </td>
+      </ng-container>
+
+       <!-- Contact No. Column -->
+       <ng-container matColumnDef="Contact No.">
+          <th mat-header-cell *matHeaderCellDef> Контактный номер </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderContactNumber}} </td>
+        </ng-container>
+
+         <!-- orderStatus Column -->
+       <ng-container matColumnDef="Status">
+          <th mat-header-cell *matHeaderCellDef> Статус </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderStatus}} </td>
+        </ng-container>
+
+         <!-- Action Column -->
+       <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Действие </th>
+        <td mat-cell *matCellDef="let element">
+            <button *ngIf="element.orderStatus == 'В процессе'" mat-raised-button color="primary" (click)="markAsDelivered(element.orderId)">Отмечено как доставленный</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>

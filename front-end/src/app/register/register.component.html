@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="auth-form" style="padding: 20px;">
+      <h1>Регистрация</h1>
+      <form #registerForm="ngForm"
+            (ngSubmit)="register(registerForm)">
+        <mat-form-field appearance="outline" class="w-100 input-container">
+          <mat-label>Имя пользователя</mat-label>
+          <input matInput
+                 ngModel
+                 name="userName"
+                 id="userName"
+                 placeholder="Имя пользователя">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100 input-container">
+          <mat-label>Имя</mat-label>
+          <input matInput
+                 ngModel
+                 name="userFirstName"
+                 id="userFirstName"
+                 placeholder="Имя">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100 input-container">
+          <mat-label>Фамилия</mat-label>
+          <input matInput
+                 ngModel
+                 name="userLastName"
+                 id="userLastName"
+                 placeholder="Фамилия">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100 input-container">
+          <mat-label>Пароль</mat-label>
+          <input matInput
+                 ngModel
+                 name="userPassword"
+                 id="userPassword"
+                 placeholder="Пароль">
+        </mat-form-field>
+
+        <div class="text-center">
+          <button class="w-100" type="submit" mat-raised-button color="primary">Зарегистрироваться</button>
+        </div>
+      </form>
+    </div>
+</div>

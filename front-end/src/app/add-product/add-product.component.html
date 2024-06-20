@@ -1,0 +1,103 @@
+<div class="container mt-5">
+    <div class="card p-2">
+
+        <div class="row">
+            <div class="col-6">
+
+                <form #productForm="ngForm"
+                      (ngSubmit)="addProduct(productForm)">
+
+                    <mat-form-field appearance="outline"
+                                    class="w-100">
+                      <mat-label>Название товара</mat-label>
+                        <input matInput
+                               placeholder="Название товара"
+                               [(ngModel)]="product.productName"
+                               name="productName">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline"
+                                    class="w-100">
+                        <mat-label>Описание товара</mat-label>
+                        <input matInput
+                               placeholder="Описание товара"
+                               [(ngModel)]="product.productDescription"
+                               name="productDescription">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline"
+                                    class="w-100">
+                        <mat-label>Стоимость без скидки</mat-label>
+                        <input matInput
+                               placeholder="Стоимость без скидки"
+                               [(ngModel)]="product.productActualPrice"
+                               name="productActualPrice">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline"
+                                    class="w-100">
+                        <mat-label>Стоимость со скидкой</mat-label>
+                        <input matInput
+                               placeholder="Стоимость со скидкой"
+                               [(ngModel)]="product.productDiscountedPrice"
+                               name="productDiscountedPrice">
+                    </mat-form-field>
+
+                    <div align="end">
+                        <button type="submit" *ngIf="isNewProduct"
+                              mat-raised-button
+                              color="primary">Добавить</button>
+                        <button mat-stroked-button
+                                color="primary"
+                                style="margin-left: 5px;">Отмена</button>
+                        <button type="submit" *ngIf="!isNewProduct"
+                                mat-stroked-button
+                                color="primary">Обоновить</button>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="col-6">
+                <div>
+                    <div class="dropzone"
+                         appDrag
+                         (files)="fileDropped($event)">
+                        <div class="text-wrapper">
+                            <div class="centered">
+                                Поместите ваше изображение или
+                                <a (click)="selectFile.click()"
+                                   class="browse-button">выберите</a>
+                                файл
+                            </div>
+
+                        </div>
+                    </div>
+                    <input multiple
+                           type="file"
+                           style="display: none;"
+                           #selectFile
+                           value="select"
+                           (change)="onFileSelected($event)">
+                </div>
+                <div class="mt-5">
+                    <div class="row">
+                        <mat-grid-list cols="4"
+                                       rowHeight="1:1">
+                            <mat-grid-tile *ngFor="let file of product.productImages; let i = index;">
+                                <div style="position: relative">
+                                    <span
+                                          (click)="removeImages(i)"><img src="./assets/icons/exit_close.png" width="32px" height="32px" style="margin-right: 15px"></span>
+                                    <img [src]="file.url"
+                                         width="100px"
+                                         height="100px" >
+                                </div>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

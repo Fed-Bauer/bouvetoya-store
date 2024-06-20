@@ -1,0 +1,81 @@
+
+<header class="site-header">
+    <div class="wrap">
+      <div class="title-area">
+        <div class="site-title">
+          <a href="http://bouvetoya-store.ru/" title="Bouvetoya">
+            <img src="./assets/bouvetoya-logo-white.png" alt="Logo" width="210px" height="48px">
+          </a>
+        </div>
+      </div>
+      <div class="widget-area header-widget-area">
+        <button class="menu-toggle" aria-expanded="false" aria-pressed="false" id="nav-primary">Меню
+          <i class="icon-menu-8"></i>
+        </button>
+        <nav class="nav-primary genesis-responsive-menu" aria-label="Main" id="-nav-primary">
+          <div class="wrap">
+            <ul id="menu-main-menu-1" class="menu genesis-nav-menu menu-primary">
+              <li class="menu-item text_title_size_m button">
+                <a routerLink="/">
+                  <span>Главная</span>
+                </a>
+              </li>
+              <li class="menu-item text_title_size_m button">
+                <a routerLink="/catalog">
+                  <span>Каталог</span>
+                </a>
+              </li>
+              <li class="menu-item text_title_size_m button">
+                <a routerLink="/sale">
+                  <span>Акции</span>
+                </a>
+              </li>
+              <li class="menu-item text_title_size_m button">
+                <a routerLink="/about-us">
+                  <span>О нас</span>
+                </a>
+              </li>
+              <li class="menu-item text_title_size_m button">
+                <a routerLink="/helping">
+                  <span>Помощь</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <button *ngIf="!isLoggedIn()" routerLink="/login" style="margin-left: 2em;" mat-button class="btn-right-icon">
+                  Войти
+                  <img src="./assets/icons/login-icon.png" class="btn-right-icon__icon">
+                </button>
+                <button *ngIf="isLoggedIn()" (click)="logout()" style="margin-left: 2em;" mat-button class="btn-right-icon">
+                  Выйти
+                  <img src="./assets/icons/logout.png" class="btn-right-icon__icon">
+                </button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<mat-toolbar color="white" style="margin-top: 0.5em; align-items: center" *ngIf="isLoggedIn()">
+  <button *ngIf="!isAdmin()" mat-button class="btn-right-icon" routerLink="/cart">
+    <img src="./assets/icons/cart.png" class="btn-right-icon__icon">
+    Корзина
+  </button>
+  <button *ngIf="!isAdmin()" mat-button class="btn-right-icon" routerLink="/getMyOrders">
+    <img src="./assets/icons/mark_accepted.png" class="btn-right-icon__icon">
+    Мои заказы
+  </button>
+  <button *ngIf="isAdmin()"  mat-button class=" btn-right-icon" routerLink="/addProduct">
+    <img src="./assets/icons/add.png" class="btn-right-icon__icon">
+    Добавить
+  </button>
+  <button *ngIf="isAdmin()" mat-button class="btn-right-icon" routerLink="/showProductDetails">
+    <img src="./assets/icons/catalog.png" class="btn-right-icon__icon">
+    Список
+  </button>
+  <button *ngIf="isAdmin()" mat-button  class="btn-right-icon" style="width: auto" routerLink="/orderInformation">
+    <img src="./assets/icons/transactions.png" class="btn-right-icon__icon">
+    Информация
+  </button>
+</mat-toolbar>

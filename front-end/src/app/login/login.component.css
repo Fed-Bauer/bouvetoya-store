@@ -1,0 +1,58 @@
+h1 {
+  font-size: 24px;
+  color: var(--bs-black);
+  margin-bottom: 40px;
+}
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+.login-btn {
+  margin-bottom: 1em;
+}
+
+.auth-form {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  margin: 80px auto 0;
+}
+
+.input-container {
+  position: relative;
+  display: inline-block;
+}
+.input-container input {
+  padding-right: 40px;
+}
+.input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Make sure the icon doesn't block input */
+}
+
+.input-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.text-gradient {
+  background: linear-gradient(to right,
+  #7953cd 20%,
+  #00affa 30%,
+  #0190cd 70%,
+  #764ada 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: animate-gradient 5s linear infinite alternate;
+}

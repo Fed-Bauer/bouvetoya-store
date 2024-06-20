@@ -1,0 +1,145 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --black: #000000;
+  --bs-black: #2c393f;
+  --bs-blue: #00c7c7;
+  --bs-white: #FFFFFF;
+  --standard-30px: 30px;
+  --bs-light-grey: #ededed;
+  --namecard-btn-height: 2em;
+  --namecard-btn-width: 10em;
+  --btn-border-radius: .5em;
+  --black-color: rgb(87, 87, 87, 0.1);
+}
+
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(36, 36, 36);
+  font-size: 14pt;}
+.text_bold {
+  font-weight: bold;
+  vertical-align: baseline;
+}
+.text_logo {
+  font-family: 'Aclonica Font', sans-serif;
+  color: rgb(36, 36, 36);
+  font-size: 18pt;
+  font-weight: bold;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+.text_title_size_m {font-size: 18pt;}
+.text_title_size_l {font-size: 24pt;}
+.text_title_size_s {font-size: 14pt;}
+.text_title_size_xl {font-size: 60px;}
+.text-gradient {
+  background: linear-gradient(to right,
+  #7953cd 20%,
+  #00affa 30%,
+  #0190cd 70%,
+  #764ada 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: animate-gradient 5s linear infinite alternate;
+}
+@keyframes animate-gradient {0% {background-position: 0% 50%;} 100% {background-position: 100% 50%;}}
+
+.auth-form {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  margin: 80px auto 0;
+}
+
+.input-container {
+  position: relative;
+  display: inline-block;
+}
+.input-container input {
+  padding-right: 40px;
+}
+.input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.mat-button {
+  border-radius: 5px;
+  margin-left: 0.5em;
+  box-shadow: none;
+  transition: background-color 0.3s ease;
+}
+
+.mat-button:hover {
+  background-color: #00c7c7;
+  color: white;
+}
+
+.btn-right-icon {
+  width: auto;
+  margin-left: 2em;
+  margin-right: 0.5em;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  font-size: 23px;
+}
+
+.btn-right-icon:hover {
+  background-color: rgba(195, 195, 195, 0.45);
+  color: white;
+}
+
+.btn-right-icon__icon {
+  margin-left: 0.2em;
+  width: 23px;
+  height: 23px;
+  transition: color 0.4s ease;
+}
+
+.btn-right-icon__icon:hover {
+  color: white;
+}
+
+.custom-table {
+  box-shadow: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.custom-table .mat-header-row {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+.custom-table .mat-row:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.btn-product {
+  background: #ffffff;
+  border: 0.5px solid #000000;
+  color: #000000;
+  transition: background-color 0.4s ease;
+}
+.btn-product:hover {
+  background: lightgrey;
+}

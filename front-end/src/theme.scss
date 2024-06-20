@@ -1,0 +1,57 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$jwt-frotend-bouvetoya-2-primary: mat.define-palette(mat.$cyan-palette, 600);
+$jwt-frotend-bouvetoya-2-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$jwt-frotend-bouvetoya-2-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$jwt-frotend-bouvetoya-2-theme: mat.define-light-theme((
+  color: (
+    primary: $jwt-frotend-bouvetoya-2-primary,
+    accent: $jwt-frotend-bouvetoya-2-accent,
+    warn: $jwt-frotend-bouvetoya-2-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($jwt-frotend-bouvetoya-2-theme);
+
+::ng-deep .custom-input.mat-mdc-form-field .mdc-notched-outline__notch {
+  background-color: #e5e5e5 !important; /* Цвет фона */
+  border-radius: 4px !important; /* Закругленные углы */
+}
+
+::ng-deep .custom-input.mat-mdc-form-field .mdc-notched-outline__leading,
+::ng-deep .custom-input.mat-mdc-form-field .mdc-notched-outline__trailing {
+  border-color: transparent !important; /* Прозрачные боковые границы */
+}
+
+::ng-deep .custom-input.mat-mdc-form-field .mat-input-element {
+  background-color: transparent !important; /* Прозрачный фон для элемента ввода */
+}
+
+::ng-deep .custom-input.mat-mdc-form-field .mat-form-field-suffix .mat-icon {
+  color: gray !important; /* Цвет иконки */
+}
+
+
+

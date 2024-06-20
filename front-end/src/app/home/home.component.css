@@ -1,0 +1,60 @@
+mat-grid-tile {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.image-container {
+    position: relative;
+    height: 300px;
+    border-radius: 10px;
+}
+.product-cart {
+  border: 2px solid var(--black-color);
+  border-radius: 15px;
+  background-color: #FFFFFF;
+}
+
+.product-cart:hover {background-color: var(--black-color);}
+
+.home-page-product-image {
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 17px;
+}
+.btn-cart {
+  background: #00c7c7;
+  color: #000000;
+  transition: background-color 0.3s ease;
+}
+.btn-cart:hover {
+  background: lightgrey;
+}
+
+.input-container {
+  position: relative;
+  display: inline-block;
+}
+.input-container input {
+  padding-right: 40px;
+}
+.input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #333333;
+}
+
+.input-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+
