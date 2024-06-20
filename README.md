@@ -32,6 +32,14 @@
 
    Приложение может использовать базу данных. Убедитесь, что вы сконфигурировали подключение к вашей базе данных в файле `application.properties`.
 
+   Поменяйте под себя следующие поля:
+
+   ```bash
+   spring.datasource.url=jdbc:mysql://localhost:3306/bouvetoya_store
+   spring.datasource.password=your-password
+   spring.sql.init.platform=mysql
+   ```
+   
 ## Клиентская часть (Angular)
 
 ### Требования
